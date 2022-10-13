@@ -20,7 +20,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      name: 'demovm4'
+      name: 'MyAgent'
       demands:
       - npm
 
@@ -86,7 +86,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: 'demovm4'
+      name: 'MyAgent'
     environment: dev
     variables:
     - group: Release
@@ -110,7 +110,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: 'demovm4'
+      name: 'MyAgent'
     environment: test
     variables:
     - group: 'Release'
@@ -133,7 +133,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: 'demovm4'
+      name: 'MyAgent'
     environment: staging
     variables:
     - group: 'Release'
